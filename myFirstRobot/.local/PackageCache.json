@@ -166,6 +166,21 @@
         "C:\\Users\\User\\.nuget\\packages\\uipath.vision/2.2.0\\lib/net461/UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\User\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.6"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.PDF.Activities",
+        "Version": "3.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\User\\.nuget\\packages\\bitmiracle.docotic.pdf/5.10.9957\\lib/net40/BitMiracle.Docotic.Pdf.dll",
+        "C:\\Users\\User\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
+        "C:\\Users\\User\\.nuget\\packages\\uipath.ocr.contracts/2.7.1\\lib/net461/UiPath.OCR.Contracts.dll",
+        "C:\\Users\\User\\.nuget\\packages\\uipath.pdf.activities/3.3.0\\lib/net461/UiPath.PDF.Activities.Design.dll",
+        "C:\\Users\\User\\.nuget\\packages\\uipath.pdf.activities/3.3.0\\lib/net461/UiPath.PDF.Activities.dll",
+        "C:\\Users\\User\\.nuget\\packages\\uipath.pdf.activities/3.3.0\\lib/net461/UiPath.PDF.dll"
+      ],
+      "Path": "C:\\Users\\User\\.nuget\\packages\\uipath.pdf.activities\\3.3.0"
     }
   ],
   "Conflicts": [],
@@ -202,6 +217,11 @@
     "AvalonEdit": {
       "Id": "AvalonEdit",
       "Version": "5.0.3",
+      "Dependencies": []
+    },
+    "BitMiracle.Docotic.Pdf": {
+      "Id": "BitMiracle.Docotic.Pdf",
+      "Version": "5.10.9957",
       "Dependencies": []
     },
     "BouncyCastle": {
@@ -902,6 +922,24 @@
       "Version": "2.7.1",
       "Dependencies": []
     },
+    "UiPath.PDF.Activities": {
+      "Id": "UiPath.PDF.Activities",
+      "Version": "3.3.0",
+      "Dependencies": [
+        {
+          "Item1": "UiPath.OCR.Contracts",
+          "Item2": "[2.7.1, )"
+        },
+        {
+          "Item1": "System.ValueTuple",
+          "Item2": "[4.5.0, )"
+        },
+        {
+          "Item1": "BitMiracle.Docotic.Pdf",
+          "Item2": "[5.10.9957, )"
+        }
+      ]
+    },
     "UiPath.Platform": {
       "Id": "UiPath.Platform",
       "Version": "20.10.4",
@@ -1093,6 +1131,16 @@
         "C:\\Users\\User\\.nuget\\packages\\avalonedit\\5.0.3\\lib\\Net40\\ICSharpCode.AvalonEdit.dll"
       ],
       "Path": "C:\\Users\\User\\.nuget\\packages\\avalonedit\\5.0.3"
+    },
+    {
+      "Package": {
+        "Id": "BitMiracle.Docotic.Pdf",
+        "Version": "5.10.9957"
+      },
+      "Assemblies": [
+        "C:\\Users\\User\\.nuget\\packages\\bitmiracle.docotic.pdf\\5.10.9957\\lib\\net40\\BitMiracle.Docotic.Pdf.dll"
+      ],
+      "Path": "C:\\Users\\User\\.nuget\\packages\\bitmiracle.docotic.pdf\\5.10.9957"
     },
     {
       "Package": {
@@ -1701,6 +1749,18 @@
         "C:\\Users\\User\\.nuget\\packages\\uipath.ocr.contracts\\2.7.1\\lib\\net461\\UiPath.OCR.Contracts.dll"
       ],
       "Path": "C:\\Users\\User\\.nuget\\packages\\uipath.ocr.contracts\\2.7.1"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.PDF.Activities",
+        "Version": "3.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\User\\.nuget\\packages\\uipath.pdf.activities\\3.3.0\\lib\\net461\\UiPath.PDF.Activities.Design.dll",
+        "C:\\Users\\User\\.nuget\\packages\\uipath.pdf.activities\\3.3.0\\lib\\net461\\UiPath.PDF.Activities.dll",
+        "C:\\Users\\User\\.nuget\\packages\\uipath.pdf.activities\\3.3.0\\lib\\net461\\UiPath.PDF.dll"
+      ],
+      "Path": "C:\\Users\\User\\.nuget\\packages\\uipath.pdf.activities\\3.3.0"
     },
     {
       "Package": {
