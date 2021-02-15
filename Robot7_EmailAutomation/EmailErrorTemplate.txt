@@ -1,0 +1,10 @@
+Dear Human,
+
+I am a robot *beep* *bop* *boop*
+I have detected unusual activity on the system at {0} 
+Danger! Danger! I have attached your error message.
+
+{1}
+
+Sincerely,
+your Email Scraping Robot

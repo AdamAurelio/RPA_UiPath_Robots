@@ -1,0 +1,10 @@
+Dear Human,
+
+I am a robot *beep* *bop* *boop*
+I am happy to report that your email automation successfully completed on the system at {0} 
+To celebrate this occasion, I have attached a quick report of the emails processed
+
+{1}
+
+Sincerely,
+your Email Scraping Robot
