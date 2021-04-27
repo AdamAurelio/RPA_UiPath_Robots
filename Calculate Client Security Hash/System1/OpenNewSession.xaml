@@ -69,7 +69,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open https://acme-test.uipath.com/" sap:VirtualizedContainerService.HintSize="560,627" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" NewSession="True" Private="True" Url="https://acme-test.uipath.com/">
+      <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open https://acme-test.uipath.com/" sap:VirtualizedContainerService.HintSize="560,627" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" NewSession="True" Private="True" Url="https://acme-test.uipath.com/">
         <ui:OpenBrowser.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
