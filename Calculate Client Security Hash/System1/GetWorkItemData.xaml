@@ -71,7 +71,6 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="GetWorkItemData" sap:VirtualizedContainerService.HintSize="720,2060" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -90,7 +89,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'iexplore.exe ACME'" sap:VirtualizedContainerService.HintSize="636,1876" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="3cac8059f935b11a3c61dc04afd6a424" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='ACME System 1 - Work Items - Internet Explorer - [InPrivate]' /&gt;">
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'iexplore.exe ACME'" sap:VirtualizedContainerService.HintSize="636,1876" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="3cac8059f935b11a3c61dc04afd6a424" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' omit:title='ACME System 1 - Work Items - Internet Explorer - [InPrivate]' /&gt;">
         <ui:WindowScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
