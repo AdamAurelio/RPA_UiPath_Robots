@@ -3,10 +3,11 @@
   "description": "RPA Advanced REFramework Calculate Client Security Hash Problem",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.10.2-preview]",
+    "RegexBuilder.Engine": "[2020.3.18.12]",
+    "UiPath.Excel.Activities": "[2.10.4]",
     "UiPath.Mail.Activities": "[1.10.4]",
-    "UiPath.System.Activities": "[21.2.1-preview]",
-    "UiPath.UIAutomation.Activities": "[21.2.0-preview]"
+    "UiPath.System.Activities": "[21.4.0]",
+    "UiPath.UIAutomation.Activities": "[21.4.3]"
   },
   "webServices": [],
   "entitiesStores": [],
