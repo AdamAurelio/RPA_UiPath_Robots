@@ -71,7 +71,7 @@
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Chrome_ClearCacheAndClose workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Browser\Chrome_ClearCache.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_Browser">
-            <Literal x:TypeArguments="x:String">chrome.exe</Literal>
+            <Literal x:TypeArguments="x:String">chrome</Literal>
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
@@ -85,7 +85,7 @@
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Edge_ClearCacheAndClose workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Browser\Edge_ClearCache.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_Browser">
-            <Literal x:TypeArguments="x:String">msedge.exe</Literal>
+            <Literal x:TypeArguments="x:String">msedge</Literal>
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>

@@ -1,8 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Edge_ClearCacheAndClose" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Edge_ClearCacheAndClose" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Browser" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1099,962</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1099,928</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -39,7 +39,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -63,9 +63,16 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence_ClearCache_Edge" sap:VirtualizedContainerService.HintSize="605,897" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence_ClearCache_Edge" sap:VirtualizedContainerService.HintSize="509,823" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="C:\Temp\Scripts\ClearCache_Edge.ps1" Name="Path_ClearCache_Edge" />
       <Variable x:TypeArguments="x:String" Name="Script_ClearCache_Edge" />
@@ -75,38 +82,56 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Find Edge" sap:VirtualizedContainerService.HintSize="563,586" sap2010:WorkflowViewState.IdRef="Sequence_7">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:Boolean" Name="BrowserExists" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:UiElementExists DisplayName="Element Exists 'Intermediate D3D Window'" Exists="[BrowserExists]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-        <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f61b8b7-380c-4c18-8874-e83acc021726" InformativeScreenshot="2afb1c025df2c60e8ed542fecffabafb" Selector="&lt;wnd app='msedge.exe' omit:cls='Chrome_WidgetWin_1' omit:title='New tab - Work - Microsoft​ Edge' /&gt;&lt;wnd omit:cls='Intermediate D3D Window' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
-        </ui:UiElementExists.Target>
-      </ui:UiElementExists>
-      <If Condition="[BrowserExists = True]" DisplayName="Check If Edge Exists Close" sap:VirtualizedContainerService.HintSize="521,348" sap2010:WorkflowViewState.IdRef="If_2">
-        <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CloseBrowserProcesses workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Browser\CloseBrowserProcesses.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Browser">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Browser" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:ReadTextFile Content="[Script_ClearCache_Edge]" DisplayName="ClearCache_Edge Script" FileName="[Path_ClearCache_Edge]" sap:VirtualizedContainerService.HintSize="467,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_3" />
+    <ui:InvokePowerShell x:TypeArguments="sma:PSObject" CommandText="[Script_ClearCache_Edge]" ContinueOnError="True" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="467,59" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_3" IsScript="True" />
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser Clear Restore Message" sap:VirtualizedContainerService.HintSize="467,361" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://google.com">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CloseApplication DisplayName="Close Application 'Intermediate D3D Window'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
-              <ui:CloseApplication.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="87c44bfc-95a3-46cb-9898-cfdc8b7d24bc" InformativeScreenshot="63e26442a04a61daa4dde32159fed13d" Selector="&lt;wnd app='msedge.exe' omit:cls='Chrome_WidgetWin_1' omit:title='New tab - Work - Microsoft​ Edge' /&gt;&lt;wnd omit:cls='Intermediate D3D Window' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
-              </ui:CloseApplication.Target>
-            </ui:CloseApplication>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'push button  Close'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4f021a82-7ea6-461b-be1b-858214a8d249" InformativeScreenshot="eb83a944d1e51cdc15246bfd4119c927" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Restore pages' /&gt;&lt;ctrl name='Restore pages' role='dialog' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" TimeoutMS="2000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
           </Sequence>
-        </If.Then>
-      </If>
-    </Sequence>
-    <ui:ReadTextFile Content="[Script_ClearCache_Edge]" DisplayName="ClearCache_Edge Script" FileName="[Path_ClearCache_Edge]" sap:VirtualizedContainerService.HintSize="563,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_3" />
-    <ui:InvokePowerShell x:TypeArguments="sma:PSObject" CommandText="[Script_ClearCache_Edge]" ContinueOnError="True" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="563,59" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_3" IsScript="True" />
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OpenBrowser>
   </Sequence>
 </Activity>
