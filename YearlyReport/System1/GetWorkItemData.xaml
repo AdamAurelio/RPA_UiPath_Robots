@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>737,1891</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>751,1931</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetWorkItemData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -72,13 +72,13 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetWorkItemData" sap:VirtualizedContainerService.HintSize="720,1826" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetWorkItemData" sap:VirtualizedContainerService.HintSize="720,1866" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="678,1734" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="678,1774" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:GenericValue" Name="P" />
         <Variable x:TypeArguments="x:String" Name="clientInfoRaw" />
@@ -88,7 +88,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'iexplore.exe ACME'" sap:VirtualizedContainerService.HintSize="636,1642" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="d14cd0517112d6741f3b00ec279ca51f" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='ACME System 1 - Work Items - Internet Explorer' /&gt;">
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'iexplore.exe ACME'" sap:VirtualizedContainerService.HintSize="636,1682" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="d14cd0517112d6741f3b00ec279ca51f" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='ACME System 1 - Work Items - Internet Explorer' /&gt;">
         <ui:WindowScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -173,7 +173,7 @@
                                 <OutArgument x:TypeArguments="x:String">[out_taxId]</OutArgument>
                               </ui:AssignOperation.To>
                               <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[match.Groups(1).Value]</InArgument>
+                                <InArgument x:TypeArguments="x:String">[match.Groups(1).Value.Trim]</InArgument>
                               </ui:AssignOperation.Value>
                             </ui:AssignOperation>
                           </scg:List>
