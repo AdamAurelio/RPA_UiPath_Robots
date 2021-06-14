@@ -1,8 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ClearCacheChromethenClose" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ClearCacheChromethenClose" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Browser" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1099,928</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1211,928</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
@@ -73,7 +73,11 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Sequence_ClearCache_Chrome" sap:VirtualizedContainerService.HintSize="509,823" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="C:\Temp\Scripts\ClearCache_Chrome.ps1" Name="Path_ClearCache_Chrome" />
+      <Variable x:TypeArguments="x:String" Name="Path_ClearCache_Chrome">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\Users\t24697\OneDrive - Berkshire Hathaway Energy\RPA Documents\RPA_UiPath_Robots\Libraries\Clear Browser Cache\Scripts\ClearCache_Chrome.ps1</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="Script_ClearCache_Chrome" />
       <Variable x:TypeArguments="sco:Collection(sd:Process)" Name="Processes" />
       <Variable x:TypeArguments="x:String" Name="CurrentUser" />
@@ -85,9 +89,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CloseBrowserProcesses workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Browser\CloseBrowserProcesses.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Browser">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Browser" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Browser">[in_Browser]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:ReadTextFile Content="[Script_ClearCache_Chrome]" DisplayName="ClearCache_Chrome Script" FileName="[Path_ClearCache_Chrome]" sap:VirtualizedContainerService.HintSize="467,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
